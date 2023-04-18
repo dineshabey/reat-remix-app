@@ -1,4 +1,4 @@
-import { Outlet,LiveReload } from "@remix-run/react";
+import { Outlet } from "@remix-run/react";
 
 export default function JokesRoute() {
   return (
@@ -6,7 +6,6 @@ export default function JokesRoute() {
       <h1>J🤪KES</h1>
       <main>
         <Outlet />
-        <LiveReload/>
       </main>
     </div>
   );
