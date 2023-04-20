@@ -9,11 +9,17 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesUrl },
 ];
 
+
 export const loader = async () => {
   return json({
-    jokeListItems: await db.sticky.findMany(),
+    jokeListItems: await db.sticky.findMany({
+      orderBy: { createdAt: "desc" },
+      select: { id: true, note: true },
+      take: 10,
+    }),
   });
 };
+
 
 export default function JokesRoute() {
   const data = useLoaderData<typeof loader>();
