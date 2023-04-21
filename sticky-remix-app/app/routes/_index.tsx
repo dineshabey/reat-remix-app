@@ -11,8 +11,9 @@ export default function IndexRoute() {
   return (
     <div className="container">
       <div className="content">
+        <br />
         <h1>
-          STICKY <span> APP!</span>
+          STICKY🤪<span>APP!</span>
         </h1>
         <nav>
           <ul>
@@ -20,11 +21,11 @@ export default function IndexRoute() {
               <Link to="sticky">View Sticky Note</Link>
             </li>
             <li>
-              <Link to="sticky/new">Add Sticky Jokes</Link>
+              <Link to="sticky/new">Add quick Note </Link>
             </li>{" "}
-            <li>
+            {/* <li>
               <Link to="sticky">Color Setting</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>

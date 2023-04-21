@@ -9,7 +9,6 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesUrl },
 ];
 
-
 export const loader = async () => {
   return json({
     jokeListItems: await db.sticky.findMany({
@@ -19,7 +18,6 @@ export const loader = async () => {
     }),
   });
 };
-
 
 export default function JokesRoute() {
   const data = useLoaderData<typeof loader>();
@@ -45,11 +43,12 @@ export default function JokesRoute() {
               {data.jokeListItems.map(({ id, note }) => (
                 <li key={id}>
                   <Link to={id}>{note}</Link>
+                
                 </li>
               ))}
             </ul>
             <Link to="new" className="button">
-              Add your own
+              Add new note
             </Link>
           </div>
           <div className="jokes-outlet">
