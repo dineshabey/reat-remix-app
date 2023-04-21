@@ -13,7 +13,7 @@ import { db } from "~/utils/db.server";
 
 export const loader = async ({ params }: LoaderArgs) => {
   const sticky = await db.sticky.findUnique({
-    where: { id: params.stickyId },
+    where: { id: params.stickyupdateId },
   });
   if (!sticky) {
     throw new Response("What a joke! Not found.", {
